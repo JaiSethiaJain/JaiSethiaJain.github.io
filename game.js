@@ -12,11 +12,14 @@ c.style.color = "rgb(255,255,255)";
 c.style.background = "rgb(85,85,170)";
 resetcolor();
 
+d.addEventListener("mouseover" , function(){new Audio('./mario.ogg').play();});
+
 a.addEventListener("click" , function(){
 	for(var i=0 ; i<b.length ; i++)
 	{
 		b[i].style.display = 'none';
 	}
+	new Audio('./button.ogg').play()
 	a.style.color = "rgb(255,255,255)";
 	a.style.background = "rgb(85,85,170)";
 	c.style.background = "";
@@ -30,6 +33,7 @@ c.addEventListener("click" , function(){
 	{
 		b[i].style.display = 'block';
 	}
+	new Audio('./button.ogg').play()
 	c.style.color = "rgb(255,255,255)";
 	c.style.background = "rgb(85,85,170)";
 	a.style.background = "";
@@ -40,11 +44,13 @@ c.addEventListener("click" , function(){
 });
 
 e.addEventListener("click" , function() {
+	new Audio('./button.ogg').play()
 	resetcolor();
 });
 
 function resetcolor()
 {
+
 	g.style.background = '';
 	e.textContent = 'NEW COLORS';
 	h.textContent = '';
@@ -78,6 +84,7 @@ for(var x=0; x<numberofblocks ; x++)
 	f[x].addEventListener("click" , function(){
 		if(this.style.background === "rgb"+d.textContent.split('RGB')[1])
 		{
+			new Audio('./score.ogg').play()
 			g.style.background = this.style.background;
 			for(var y = 0 ; y<numberofblocks ; y++)
 			{
@@ -92,6 +99,7 @@ for(var x=0; x<numberofblocks ; x++)
 		{
 			this.style.background = "rgb(0,0,0)";
 			h.textContent = "Try Again";
+			new Audio('./fire_sound.ogg').play()
 		}
 	});
 }
